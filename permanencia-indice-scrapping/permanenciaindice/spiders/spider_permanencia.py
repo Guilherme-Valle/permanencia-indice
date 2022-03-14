@@ -13,7 +13,7 @@ class SpiderPermanencia(scrapy.Spider):
         
             if linkToPage != '/drupal/category/2':
                 path = base_path + linkToPage
-                yield scrapy.FormRequest(url=path, callback=self.fetchAuthorPage)
+                yield scrapy.Request(url=path, callback=self.fetchAuthorPage)
 
     def fetchAuthorPage(self, response):
         authorName = response.xpath('//div[@id="content"]//h1[@class="title"]/text()').extract()[0]
@@ -27,3 +27,12 @@ class SpiderPermanencia(scrapy.Spider):
             print('Autor: ' + authorName +
                 '\nArtigo: ' + authorArticle.xpath('text()').extract()[0] + 
                 '\nLink: ' + authorArticle.xpath('@href').extract()[0] + '\n')
+        
+        nextPage = response.xpath('//li[@class="pager-next"]')
+
+        if nextPage:
+            nextPageHref = nextPage.xpath('a/@href').extract()
+            if len(nextPageHref) > 0:
+                path = base_path + nextPageHref[0]
+                yield scrapy.Request(url=path, callback=self.fetchAuthorPage)
+            
