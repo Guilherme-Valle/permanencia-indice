@@ -1,0 +1,2 @@
+itemadapter==0.4.0
+Scrapy==2.5.1
