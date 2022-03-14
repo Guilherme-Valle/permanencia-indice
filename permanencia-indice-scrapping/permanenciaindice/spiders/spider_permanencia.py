@@ -1,38 +1,45 @@
 import scrapy
+from mongo_connection.mongo_connection import MongoConnection
 
 base_path = "https://permanencia.org.br"
-
+mongo_connection = MongoConnection()
 class SpiderPermanencia(scrapy.Spider):
     name = "spider_permanencia"
 
     start_urls = ["https://permanencia.org.br/drupal/node/30"]
 
     def parse(self, response):
-        for authorPage in response.xpath('//div[@id="content"]//ul[@class="menu"]//li/a'):
-            linkToPage = authorPage.xpath('@href').extract()[0]
+        for author_page in response.xpath('//div[@id="content"]//ul[@class="menu"]//li/a'):
+            link_to_page = author_page.xpath('@href').extract()[0]
         
-            if linkToPage != '/drupal/category/2':
-                path = base_path + linkToPage
-                yield scrapy.Request(url=path, callback=self.fetchAuthorPage)
+            if link_to_page != '/drupal/category/2':
+                path = base_path + link_to_page
+                yield scrapy.Request(url=path, callback=self.fetch_author_page)
 
-    def fetchAuthorPage(self, response):
-        authorName = response.xpath('//div[@id="content"]//h1[@class="title"]/text()').extract()[0]
+    def fetch_author_page(self, response):
+        author_name = response.xpath('//div[@id="content"]//h1[@class="title"]/text()').extract()[0]
 
-        if authorName:
-            authorName = authorName.split('(')[0].strip()
+        if author_name:
+            author_name = author_name.split('(')[0].strip()
+            author = mongo_connection.get_author(author_name=author_name)
+            if author == None:
+              mongo_connection.insert_author({"name": author_name})
+
         else:
             return None
 
-        for authorArticle in response.xpath('//div[@id="content"]//h2/a'):
-            print('Autor: ' + authorName +
-                '\nArtigo: ' + authorArticle.xpath('text()').extract()[0] + 
-                '\nLink: ' + authorArticle.xpath('@href').extract()[0] + '\n')
+        for author_article in response.xpath('//div[@id="content"]//h2/a'):
+            mongo_connection.insert_link({
+              "author": author_name,
+              "title": author_article.xpath('text()').extract()[0],
+              "link": base_path +  author_article.xpath('@href').extract()[0]
+            })
         
-        nextPage = response.xpath('//li[@class="pager-next"]')
+        next_page = response.xpath('//li[@class="pager-next"]')
 
-        if nextPage:
-            nextPageHref = nextPage.xpath('a/@href').extract()
-            if len(nextPageHref) > 0:
-                path = base_path + nextPageHref[0]
-                yield scrapy.Request(url=path, callback=self.fetchAuthorPage)
+        if next_page:
+            next_page_href = next_page.xpath('a/@href').extract()
+            if len(next_page_href) > 0:
+                path = base_path + next_page_href[0]
+                yield scrapy.Request(url=path, callback=self.fetch_author_page)
             
