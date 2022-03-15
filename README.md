@@ -17,6 +17,6 @@
 
 ## - ~~Extrair autores e links para artigos do site da Permanência utilizando webscraping.~~
 ## - ~~Armazenar autores e links num banco de dados NOSQL.~~
-## - Disponibilizar os dados numa API Rest.
+## - ~~Disponibilizar os dados numa API Rest.~~
 ## - Criar um webapp responsivo com NextJS para a exibição do índice dos artigos.
 ## - Criar Dockerfile para o projeto.
