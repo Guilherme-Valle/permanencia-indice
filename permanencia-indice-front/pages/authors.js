@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 
 function Authors({ authors }) {
     return (
@@ -10,8 +11,8 @@ function Authors({ authors }) {
             </Head>
 
             <ul>
-                {authors.map((author) => {
-                    return <li>{author.name}</li>
+                {authors.map((author, index) => {
+                    return <li key={index}><Link href={'/authors/' + author._id}><a>{author.name}</a></Link></li>
                 })}
             </ul>
         </div>
@@ -20,8 +21,8 @@ function Authors({ authors }) {
 }
 
 export async function getServerSideProps() {
-    const rest = await fetch('http://localhost:3001/authors')
-    const authors = await rest.json()
+    const res = await fetch('http://localhost:3001/authors')
+    const authors = await res.json()
 
     return {
         props: {
