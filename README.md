@@ -6,7 +6,7 @@
 
 > ## O que motivou este projeto?
 >
-> A motivação para o projeto surgiu de uma dificuldade prática em acessar o índice de autores já existente no website da Permanência, aliada a uma vontade de ajudar outros que passam por semelhantes problemas ao acessar tão excepcional website e a intenção de aprimorar os conhecimentos em webscraping e programação web. Além disso, divulgar o site da Permanência, *um dos melhores do catolicismo brasileiro*.
+> A motivação para o projeto surgiu de uma dificuldade prática em acessar o índice de autores já existente no website da Permanência, aliada a uma vontade de ajudar outros que passam por semelhantes problemas ao acessar tão excepcional website e à intenção de aprimorar os conhecimentos em webscraping e programação web. Além disso, divulgar o site da Permanência, *um dos melhores do catolicismo brasileiro*.
 
 > ## É um projeto open-source?
 >
