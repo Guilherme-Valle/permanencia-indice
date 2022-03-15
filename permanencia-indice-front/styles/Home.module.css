@@ -1,0 +1,10 @@
+.main--page {
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.main--page h3 {
+  color: blue;
+  cursor: pointer;
+}

@@ -8,7 +8,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-app.get('/', async (req, res) => {
+app.get('/authors', async (req, res) => {
   const authors = await mongoDB.getAuthors();
 
   res.send(authors);
