@@ -15,8 +15,20 @@
 
 # TODO do projeto:
 
+> # Estágio 1
+
 ## - ~~Extrair autores e links para artigos do site da Permanência utilizando webscraping.~~
 ## - ~~Armazenar autores e links num banco de dados NOSQL.~~
 ## - ~~Disponibilizar os dados numa API Rest.~~
-## - Criar um webapp responsivo com NextJS para a exibição do índice dos artigos.
-## - Criar Dockerfile para o projeto.
+## - Criar um webapp com NextJS para a exibição do índice dos artigos.
+## - Hospedar website em domínio público
+## - Criar Dockerfile para o projeto
+
+
+> # Estágio 2
+## - Tornar o site responsivo
+## - Adicionar imagens individuais aos autores
+## - Indexar Thesauri
+## - Indexar índice temático
+## - Melhorar design do site
+
