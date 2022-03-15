@@ -2,12 +2,16 @@ const mongoose = require('mongoose');
 
 mongoose.connect('mongodb://127.0.0.1:27017/permanencia_indice');
 
+const ObjectId = mongoose.Types.ObjectId;
+
 const authorsSchema = new mongoose.Schema({
+  _id: String,
   name: String
 });
 
 const linksSchema = new mongoose.Schema({
-  author: String,
+  authorName: String,
+  authorId: ObjectId,
   title: String,
   link: String
 });
@@ -20,8 +24,8 @@ const getAuthors = () => {
   return Author.find();
 };
 
-const getLinksByAuthor = (authorName) => {
-  return Link.find({ author: authorName });
+const getLinksByAuthor = (authorId) => {
+  return Link.find({ authorId: new ObjectId(authorId) });
 }
 
 module.exports = {

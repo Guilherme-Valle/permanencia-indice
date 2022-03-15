@@ -14,6 +14,12 @@ app.get('/authors', async (req, res) => {
   res.send(authors);
 });
 
+app.get("/authors/:authorId", async (req, res) => {
+  const links = await mongoDB.getLinksByAuthor(req.params.authorId);
+
+  res.send(links);
+})
+
 app.listen(3001, () => {
   console.log('listening on port 3001!');
 })

@@ -18,19 +18,22 @@ class SpiderPermanencia(scrapy.Spider):
 
     def fetch_author_page(self, response):
         author_name = response.xpath('//div[@id="content"]//h1[@class="title"]/text()').extract()[0]
+        author_id = None
 
         if author_name:
             author_name = author_name.split('(')[0].strip()
             author = mongo_connection.get_author(author_name=author_name)
             if author == None:
-              mongo_connection.insert_author({"name": author_name})
-
+                author_id = mongo_connection.insert_author({"name": author_name})
+            else:
+                author_id = author["_id"]
         else:
             return None
 
         for author_article in response.xpath('//div[@id="content"]//h2/a'):
             mongo_connection.insert_link({
-              "author": author_name,
+              "authorId": author_id,
+              "authorName": author_name,
               "title": author_article.xpath('text()').extract()[0],
               "link": base_path +  author_article.xpath('@href').extract()[0]
             })
