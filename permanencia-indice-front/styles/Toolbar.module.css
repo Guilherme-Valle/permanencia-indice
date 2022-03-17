@@ -45,3 +45,18 @@
   background-color: rgba(0, 0, 0, 0.179);
 
 }
+
+.toolbar--input--container {
+  background: #fff;
+  border-radius: 30px;
+  padding: 10px 20px;
+  align-items: center;
+}
+
+.toolbar--input { 
+  background: transparent;
+  border: none;
+  outline: none;
+  font-weight: 500;
+  font-size: 19px;
+}

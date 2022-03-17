@@ -1,8 +1,9 @@
 import Link from 'next/link'
 import styles from '/styles/Toolbar.module.css'
 import Image from 'next/image'
+import SearchInput from '../SearchInput/SearchInput'
 
-const Toolbar = () => {
+const Toolbar = (props) => {
   return (
     <nav className={styles['nav--toolbar']}>
       <Link href='/'>
@@ -11,6 +12,9 @@ const Toolbar = () => {
           <h4>Índice da Permanência</h4>
         </div>
       </Link>
+
+      {props.showSearch ? <SearchInput text={props.text} setText={props.setText} /> : null}
+
       <ul className={styles['toolbar--links']}>
         <li>
           <Link href='/authors'><a>Autores</a></Link>

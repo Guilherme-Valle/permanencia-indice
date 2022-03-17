@@ -2,7 +2,11 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Toolbar from '../components/Toolbar/Toolbar'
 import styles from '../styles/Home.module.css'
+import '@fortawesome/fontawesome-svg-core/styles.css';
+// Prevent fontawesome from adding its CSS since we did it manually above:
+import { config } from '@fortawesome/fontawesome-svg-core';
 
+config.autoAddCss = false; /* eslint-disable import/first */
 export default function Home() {
   return (
     <div>

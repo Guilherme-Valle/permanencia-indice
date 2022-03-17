@@ -1,0 +1,18 @@
+.author--card {
+  display: flex;
+  justify-content: center;  
+  align-items: center;
+  padding: 15px;
+  font-size: 27px;
+  min-height: 10em;
+  background-color: rgb(185, 165, 144);
+  margin-top: 2rem;
+  vertical-align: middle;
+  cursor: pointer;
+  box-shadow: 3px 5px 15px 5px rgba(0,0,0,0.48);
+}
+
+.author--card:hover {
+  transform: scale(1.01);
+  background-color: rgb(170, 145, 118);
+}
