@@ -1,10 +1,24 @@
 .main--page {
+  overflow: hidden;
   text-align: center;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  background-color: antiquewhite;
 }
 
-.main--page h3 {
+.main--page h2 {
+  font-size: 40px;;
+}
+
+.main--page h2 a {
   color: blue;
   cursor: pointer;
 }
+
+.sections {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: auto;
+  grid-gap: 1rem;
+}
+

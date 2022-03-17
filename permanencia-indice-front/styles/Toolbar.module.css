@@ -1,0 +1,47 @@
+.nav--toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 3vh;
+  background-color: rgb(180, 133, 133);
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.toolbar--logo {
+  margin-left: 2rem;
+  color: black;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 25px;
+  vertical-align: middle;
+  display: flex;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.toolbar--links {
+  display: flex;
+  justify-content: space-around;
+  width: 30%;
+}
+
+.toolbar--links li {
+  list-style: none;
+}
+
+.toolbar--links a {
+  color: black;
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 20px;
+}
+
+.toolbar--links a:hover {
+  background-color: rgba(0, 0, 0, 0.179);
+
+}
