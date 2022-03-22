@@ -1,0 +1,25 @@
+.perm--links--list {
+  margin: auto;
+}
+
+.perm--links--list ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;  
+}
+
+.perm--link {
+  margin-top: 15px;
+  font-size: 20px;
+  padding: 5px;
+}
+
+.perm--link:hover {
+  background-color: rgb(172, 156, 114);
+}
+
+.perm--link li {
+  list-style: none;
+  text-decoration: none;
+}
+

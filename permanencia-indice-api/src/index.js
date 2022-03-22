@@ -15,9 +15,11 @@ app.get('/authors', async (req, res) => {
 });
 
 app.get("/authors/:authorId", async (req, res) => {
+  const authorId = req.params.authorId;
   const links = await mongoDB.getLinksByAuthor(req.params.authorId);
+  const author = await mongoDB.getAuthor(authorId);
 
-  res.send(links);
+  res.send({links, author});
 })
 
 app.listen(3001, () => {

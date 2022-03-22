@@ -8,7 +8,10 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 
 function SearchInput({ text, setText }) {
   return (<div className={styles['toolbar--input--container']}>
-    <input className={styles['toolbar--input']} type='text' value={text} onChange={e => setText(e.target.value)} />
+    <input className={styles['toolbar--input']}
+      type='text' value={text}
+      placeholder="Pesquise por autores"
+      onChange={e => setText(e.target.value)} />
     <FontAwesomeIcon icon={faMagnifyingGlass} />
   </div>)
 }

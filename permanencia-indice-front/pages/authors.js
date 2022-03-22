@@ -25,16 +25,12 @@ function Authors({ authors }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Toolbar showSearch={true} text={text} setText={setText} />
-      
+
       <main className={styles['main--page']}>
         <div className={styles.authors}>
           {authorsList.sort((a, b) => {
             const nameA = a.name.toLowerCase(), nameB = b.name.toLowerCase();
-            if (nameA < nameB) {
-              return -1;
-            } else {
-              return 1;
-            }
+            return nameB > nameA ? -1 : 1;
           }).map((author, index) => {
             return <AuthorCard {...author} key={index} />
           })}

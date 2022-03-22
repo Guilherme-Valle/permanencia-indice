@@ -9,7 +9,7 @@ const Toolbar = (props) => {
       <Link href='/'>
         <div className={styles['toolbar--logo']}>
           <Image src="/permanencia.jpg" height='0' width='160' />
-          <h4>Índice da Permanência</h4>
+          <h4>Índice da Permanência {props.subTitle ?' – ' + props.subTitle : null}</h4>
         </div>
       </Link>
 
@@ -20,10 +20,10 @@ const Toolbar = (props) => {
           <Link href='/authors'><a>Autores</a></Link>
         </li>
         <li>
-          <Link href='/'><a>Thesauri</a></Link>
+          <Link href='/tobedone'><a>Thesauri</a></Link>
         </li>
         <li>
-          <Link href='/'><a>Índice temático</a></Link>
+          <Link href='/tobedone'><a>Índice temático</a></Link>
         </li>
       </ul>
     </nav>
