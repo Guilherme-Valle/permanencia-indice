@@ -31,4 +31,5 @@
 ## - Indexar Thesauri
 ## - Indexar índice temático
 ## - Melhorar design do site
+## - Adicionar gráficos interessantes
 
