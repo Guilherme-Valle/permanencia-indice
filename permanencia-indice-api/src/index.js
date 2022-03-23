@@ -22,6 +22,6 @@ app.get("/authors/:authorId", async (req, res) => {
   res.send({links, author});
 })
 
-app.listen(3000, () => {
-  console.log('listening on port 3000!');
+app.listen(3001, () => {
+  console.log('listening on port 3001!');
 })
