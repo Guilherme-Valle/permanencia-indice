@@ -21,7 +21,7 @@
 ## - ~~Armazenar autores e links num banco de dados NOSQL.~~
 ## - ~~Disponibilizar os dados numa API Rest.~~
 ## - ~~Criar um webapp com NextJS para a exibição do índice dos artigos.~~
-## - Hospedar website em domínio público
+## - ~Hospedar website em domínio público~ -> https://indicepermanencia.dovalle.app.br
 ## - Criar Dockerfile para o projeto
 
 
