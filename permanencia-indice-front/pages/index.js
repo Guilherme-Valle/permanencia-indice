@@ -21,7 +21,7 @@ export default function Home() {
 
         <h2>Este projeto é uma iniciativa pessoal,
           sem vinculação com o <a href='https://permanencia.org.br' target='_blank' rel='noreferrer'>site</a> da Permanência ou com qualquer objetivo financeiro,
-          que tem por fim exibir índices dos artigos do site de uma forma mais organizada do que os do website (acredito que o índice mais organizado do website é o da sessão "Revista Permanência"). </h2>
+          que tem por fim exibir índices dos artigos do site de uma forma mais organizada do que os do website (acredito que o índice mais organizado do website é o da sessão Revista Permanência). </h2>
 
         <br />
 
