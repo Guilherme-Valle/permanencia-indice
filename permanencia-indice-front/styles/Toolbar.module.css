@@ -7,7 +7,6 @@
   position: sticky;
   top: 0;
   width: 100%;
-  z-index: 100;
 }
 
 .toolbar--logo {
@@ -37,7 +36,7 @@
   text-decoration: none;
   letter-spacing: 3px;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 16px;
   padding: 20px;
 }
 
@@ -60,3 +59,95 @@
   font-weight: 500;
   font-size: 19px;
 }
+
+.burger--toolbar {
+  display: none;
+}
+
+.burger--toolbar div {
+  width: 25px;
+  height: 3px;
+  background-color: rgb(226, 226, 226);
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+@media screen and (max-width:1024px){
+  .toolbar--links {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 800px){
+  .nav--toolbar {
+    position: fixed;
+    justify-content: space-around;
+  }
+
+  .toolbar--input--container {
+    display: none;
+  }
+
+  .toolbar--links {
+    position: absolute;
+    right: 0;
+    height: 100vh;
+    top: 3vh;
+    background-color: rgb(180, 133, 133);
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+    width: 50%;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+  }
+
+  .toolbar--links a {
+    font-size: 15px;
+    padding: 0 !important;
+  }
+
+  .nav-links li {
+    opacity: 0;
+  }
+
+  .burger--toolbar {
+    display: block;
+    cursor: pointer;
+  }
+
+  .site--title {
+    font-size: 12px;
+  }
+}
+
+.nav--active {
+  transform: translateX(0%);
+}
+
+.toggle .burger--line--1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .burger--line--2 {
+  opacity: 0;
+}
+  
+.toggle .burger--line--3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.animation--class {
+}
+
+  

@@ -1,9 +1,9 @@
 .main--page {
   overflow: hidden;
   text-align: center;
-  width: 100%;
   min-height: 100vh;
   background-color: antiquewhite;
+  width: 100%;
 }
 
 .main--page h2 {
@@ -27,3 +27,11 @@
   text-decoration: none;
 }
 
+@media screen and (max-width: 768px){
+  .main--page {
+    margin-top: 50px;
+  }
+  .authors {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
