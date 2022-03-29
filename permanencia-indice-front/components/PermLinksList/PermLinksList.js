@@ -9,8 +9,8 @@ function PermLinksList({ links }) {
           const titleA = a.title.toLowerCase(), titleB = b.title.toLowerCase();
           return titleB > titleA ? -1 : 1
         })
-        .map((link) => {
-          return <PermLink {...link} />
+        .map((link, index) => {
+          return <PermLink {...link} key={index} />
         })}
       </ul>
 
