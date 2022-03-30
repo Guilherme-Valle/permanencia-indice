@@ -29,7 +29,7 @@
 
 @media screen and (max-width: 768px){
   .main--page {
-    margin-top: 50px;
+    margin-top: 70px;
   }
   .authors {
     grid-template-columns: repeat(1, 1fr);
