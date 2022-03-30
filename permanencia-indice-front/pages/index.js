@@ -19,20 +19,22 @@ export default function Home() {
 
       <main className={styles['main--page']}>
 
-        <h2>Este projeto é uma iniciativa pessoal,
-          sem vinculação com o <a href='https://permanencia.org.br' target='_blank' rel='noreferrer'>site</a> da Permanência ou com qualquer objetivo financeiro,
-          que tem por fim exibir índices dos artigos do site de uma forma mais organizada do que os do website (acredito que o índice mais organizado do website é o da sessão Revista Permanência). </h2>
+        <h3>Este projeto é uma iniciativa pessoal,
+          sem vinculação com o <a href='https://permanencia.org.br' target='_blank' rel='noreferrer'>site</a> da Permanência ou com qualquer objetivo financeiro.
+        </h3> <br />
+
+        <h3>O fim deste website é exibir índices dos artigos do site de uma forma mais organizada e prática. </h3>
 
         <br />
 
-        <h2>Também fiz isso para adquirir novos conhecimentos em programação web e scrapping. </h2>
+        <h3>Também fiz isso para adquirir novos conhecimentos em programação web e scrapping. </h3>
 
         <br />
         <br />
-        <h2>
+        <h3>
           Para mais informações, não deixe de visitar o <a href='https://github.com/Guilherme-Valle/permanencia-indice'
             rel='noreferrer'
-            target='_blank'>repositório deste site</a>.</h2>
+            target='_blank'>repositório deste site</a>.</h3>
 
         <h2>Salve Maria!</h2>
 
